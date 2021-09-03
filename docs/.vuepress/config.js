@@ -2,7 +2,6 @@ module.exports = {
   title: '前端基础',  // 设置网站标题
   description: '前端基础知识总结',
   base: '/web_knowledge/',
-  dest: public,
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
