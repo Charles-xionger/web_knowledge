@@ -25,7 +25,8 @@ module.exports = {
           collapsable: true,
           children: [
             'jsbase/variable-types',
-            'jsbase/prototype-chain'
+            'jsbase/prototype-chain',
+            'jsbase/scope'
           ]
         },
         {
@@ -40,7 +41,7 @@ module.exports = {
           title: '内容简介',
           collapsable: false,
           children: [
-            ''
+            'node/node'
           ]
         },
       ],
