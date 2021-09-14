@@ -26,7 +26,9 @@ module.exports = {
           children: [
             'jsbase/variable-types',
             'jsbase/prototype-chain',
-            'jsbase/scope'
+            'jsbase/scope',
+            'jsbase/async',
+            'jsbase/async-advanced'
           ]
         },
         {
