@@ -52,7 +52,7 @@ module.exports = {
           title: '内容简介',
           collapsable: false,
           children: [
-            ''
+            'linked-list/linked-list'
           ]
         },
       ]
