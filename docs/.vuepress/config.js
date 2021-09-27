@@ -35,6 +35,10 @@ module.exports = {
           title: 'JS-Web-API',
           collapsable: true,
           children: [
+            'webapi/DOM',
+            'webapi/BOM',
+            'webapi/event',
+            'webapi/ajax'
           ]
         }
       ],
