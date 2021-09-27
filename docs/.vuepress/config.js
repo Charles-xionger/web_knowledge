@@ -38,7 +38,8 @@ module.exports = {
             'webapi/DOM',
             'webapi/BOM',
             'webapi/event',
-            'webapi/ajax'
+            'webapi/ajax',
+            'webapi/storage'
           ]
         }
       ],
