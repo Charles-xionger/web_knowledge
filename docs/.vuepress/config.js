@@ -40,7 +40,11 @@ module.exports = {
             'webapi/event',
             'webapi/ajax',
             'webapi/storage',
-            'webapi/http'
+            'webapi/http',
+            'webapi/event',
+            'de/chrome',
+            'de/git',
+            'de/de'
           ]
         }
       ],
