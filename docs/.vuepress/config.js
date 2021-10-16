@@ -1,11 +1,12 @@
 module.exports = {
-  title: '前端基础',  // 设置网站标题
+  title: '蒋新波的个人博客',  // 设置网站标题
   description: '前端基础知识总结',
   base: '/web_knowledge/',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
       { text: 'js基础', link: '/web/' },
+      // { text: 'React', link: '/react/' },
       { text: '前端课程', link: '/web-course/' },
       { text: '数据结构和算法-JavaScript', link: '/js-algorithm/' }
     ],
@@ -27,8 +28,7 @@ module.exports = {
             'jsbase/variable-types',
             'jsbase/prototype-chain',
             'jsbase/scope',
-            'jsbase/async',
-            'jsbase/async-advanced'
+            'jsbase/async'
           ]
         },
         {
@@ -53,6 +53,8 @@ module.exports = {
           title: '内容简介',
           collapsable: false,
           children: [
+            'promise/promiseA+',
+            'module/module',
             'node/node'
           ]
         },
@@ -65,7 +67,8 @@ module.exports = {
             'linked-list/linked-list',
             'set/set',
             'map/map',
-            'tree/tree'
+            'tree/tree',
+            'graph/graph'
           ]
         },
       ]
