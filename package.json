@@ -13,5 +13,8 @@
     "license": "ISC",
     "devDependencies": {
         "vuepress": "^1.8.2"
+    },
+    "dependencies": {
+        "valine": "^1.4.14"
     }
 }

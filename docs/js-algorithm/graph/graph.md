@@ -8,11 +8,11 @@
 
 ## 图的表示法： 邻接矩阵
 
-<img src="./image/邻接矩阵.png">
+<img src="./images/邻接矩阵.png">
 
 ## 图的表示法： 邻接表
 
-<img src="./image/邻接表.png">
+<img src="./images/邻接表.png">
 
 ### 图的常用操作
 

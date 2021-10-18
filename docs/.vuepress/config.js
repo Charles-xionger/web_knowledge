@@ -73,5 +73,18 @@ module.exports = {
         },
       ]
     }
-  }
+  },
+  // plugins: [
+  //   [
+  //     'vuepress-plugin-comment',
+  //     {
+  //       choosen: 'valine',
+  //       options: {
+  //         el: '#valine-vuepress-comment',
+  //         appId: 'LNH1tVxpgyuiXNg6azxozhvX-gzGzoHsz',
+  //         appkey: 'dRKz3WEnIyVFk96ejTHBVq6X'
+  //       }
+  //     }
+  //   ]
+  // ]
 }
