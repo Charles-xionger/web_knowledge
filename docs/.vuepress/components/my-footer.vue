@@ -24,6 +24,10 @@ export default {
 </script>
 
 <style>
+.footer {
+  font-size: 16px;
+  font-weight: 500;
+}
 .footer>a {
   display: inline-block;
   text-decoration:none;
