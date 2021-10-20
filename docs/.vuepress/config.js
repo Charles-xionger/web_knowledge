@@ -1,7 +1,7 @@
 module.exports = {
   title: '蒋新波的个人博客',  // 设置网站标题
   description: '前端基础知识总结',
-  base: '/web_knowledge/',
+  base: '/',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
@@ -19,6 +19,23 @@ module.exports = {
           collapsable: false,
           children: [
             ''
+          ]
+        }, {
+          title: 'HTML和CSS',
+          collapsable: true,
+          children: [
+            'html-css/html',
+            'html-css/css'
+          ]
+        },
+        {
+          title: 'JS基础',
+          collapsable: true,
+          children: [
+            'jsbase/variable-types',
+            'jsbase/prototype-chain',
+            'jsbase/scope',
+            'jsbase/async'
           ]
         },
         {
@@ -73,18 +90,5 @@ module.exports = {
         },
       ]
     }
-  },
-  // plugins: [
-  //   [
-  //     'vuepress-plugin-comment',
-  //     {
-  //       choosen: 'valine',
-  //       options: {
-  //         el: '#valine-vuepress-comment',
-  //         appId: 'LNH1tVxpgyuiXNg6azxozhvX-gzGzoHsz',
-  //         appkey: 'dRKz3WEnIyVFk96ejTHBVq6X'
-  //       }
-  //     }
-  //   ]
-  // ]
+  }
 }

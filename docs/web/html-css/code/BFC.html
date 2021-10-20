@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>掌握BFC</title>
+        <style>
+            .container {
+                background-color: aqua;
+            }
+            .container img {
+                float: left;
+                width: 300px;
+            }
+            .bfc {
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>理解BFC</h1>
+        <div class="container bfc">
+            <img src="../images/块级元素，内联元素.png" />
+            <p class="bfc">我是块级元素</p>
+        </div>
+    </body>
+</html>
