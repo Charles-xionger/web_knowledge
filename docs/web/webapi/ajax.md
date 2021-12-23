@@ -81,6 +81,14 @@ xhr.send(JSON.stringify(postData));
 
 未经 server 端允许就实现跨域，说明浏览器有漏洞
 
+
+### 常见的跨域解决方案
+- CORS、反向代理（Reverse Proxy）、 JSONP
+
+#### CORS（Cross-origin Resource Sharing）跨域资源共享
+
+
+
 #### 浏览器对跨域请求的拦截
 
 <img src="../images/浏览器对跨域请求拦截.png">
@@ -152,3 +160,5 @@ ajax(url)
     .then(res => console.log(res))
     .catch(err => console.log(err));
 ```
+
+

@@ -38,4 +38,8 @@ sessionStorage.getItem('b');
 -   sessionStorage 数据只会存在于当前会话，浏览器关闭则清空 //用户权限登录
 -   一般用 localStorage 会更多一些
 
-区别： 1.容量 2.API 可用性问题 3.本地存储
+区别：
+
+1. 容量 cookie 最大存储 4k , localStorage 和 sessionStorage 5M
+2. API 可用性问题
+3. 是否跟随 http 请求发送出去

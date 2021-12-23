@@ -131,12 +131,18 @@ const inorder = root => {
     inorder(root.right);
 };
 
-// 非递归
+/**
+ * 迭代版本
+ * 1. 遍历 树 拿到 所有的左节点： 利用指针
+ * 2. 获取栈顶的节点，将 节点的值推入 res 中， 将指针指向 节点的右子树
+ * 3. 倒数第一个节点，倒数第二个节点，依次将 stack内的节点弹出
+ */
 
 const inorder = root => {
     if (!root) {
         return;
     }
+    const res = [];
     const stack = [];
     let p = root; // 指针
     while (stack.length || p) {
@@ -149,6 +155,9 @@ const inorder = root => {
         p = n.right;
     }
 };
+
+// 时间复杂度： 遍历了整个树 ，O(n)
+// 空间复杂度： 利用数组进行存储 O(n)
 ```
 
 ### 后序遍历算法口诀
@@ -191,6 +200,53 @@ const postorder = root => {
 ```
 
 ## LeetCode 算法题
+
+#### [144. 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)（easy）
+
+#### [94. 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) (easy)
+
+#### [145. 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/) (easy)
+
+```js
+// 迭代版本的关键性代码
+// 前序遍历
+while (stack.length || point) {
+    while (point) {
+        res.push(point.val);
+        stack.push(point);
+        point = point.left;
+    }
+    const node = stack.pop();
+    point = node.right;
+}
+return res;
+
+// 中序遍历
+while (stack.length || point) {
+    while (point) {
+        stack(point);
+        point = point.left;
+    }
+    const node = stack.pop();
+    res.push(node.val);
+    point = node.right;
+}
+return res;
+
+// 后序遍历
+while (stack.length || point) {
+    while (point) {
+        res.push(point.val);
+        stack(point);
+        point = point.right;
+    }
+    const node = stack.pop();
+    point = node.left;
+}
+return res.reverse();
+```
+
+前中后三种关键代码五行左右，深度遍历，利用栈的特性：先进后出， 模拟递归堆栈的过程
 
 [LeetCode 104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 
@@ -426,3 +482,11 @@ const dfs = (n, path) => {
 
 dfs(json, []);
 ```
+
+[106.中后遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+
+**思路**
+中序遍历（inorder）:
+后序遍历（postorder）:
+
+[105.前中遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)

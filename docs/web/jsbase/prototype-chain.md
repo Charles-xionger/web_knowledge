@@ -2,7 +2,7 @@
 
 js 本身基于原型继承的语言，es6 之后 class 继承，但是也是基于原型链的基础 class 形式上的继承，本质上还是原型的继承。
 
-**题目**：
+**常见的题目**：
 
 1.  如何判断一个变量是不是数组？// 深入考虑 instanceof 是怎么检验数组
 
@@ -46,6 +46,45 @@ xiaohuo.sayHi();
 ```
 
 #### 思考： new 的过程？
+
+new 的作用是通过构造函数来创建一个实例对象，该实例与原型的构造函数之间的关系：
+
+<center>
+<img src="./images/实例对象-原型-构造函数之间的关系.png">
+</center>
+
+**new 过程中发生了什么？**
+
+1. 一个新对象被创建。
+2. 该对象的`__proto__` 指向 构造函数的原型。 `newObject.__proto__ = constructor.prototype`
+3. 将执行上下文（this）绑定到新创建的对象中。
+4. 如果构造函数有返回值（对象或者函数），返回值会取代第一步中新建的对象
+
+**实现一个 new**
+
+```js
+function myNew(Fn, ...args) {
+    // 创建一个新对象
+    const result = {};
+    // __proto__ 指向 constructor.prototype
+    if (Fn.prototype !== null) {
+        Object.setPrototypeOf(result, Fn.prototype);
+    }
+    // 将执行上下文（this）绑定到新创建的对象中
+    const returnResult = Fn.apply(result, args);
+
+    // 如果构造函数有返回值（对象或函数），那么返回值取代第一步创建的新对象
+    if (
+        (typeof retrunResult === 'object' || typeof returnResult === 'function') &&
+        returnResult !== null
+    ) {
+        return returnResult;
+    }
+    return result;
+}
+```
+
+[Object.setPrototypeOf()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf) 是 ES6 方法，被认为是修改对象原型最合适的方法
 
 ### 继承
 
@@ -142,7 +181,7 @@ console.log(xialuo.__proto__ === Student.prototype);
 ### 原型图
 
 **class 类原型图**
-![原型图1](../images/prototype01.png)
+![原型图1](./images/prototype01.png)
 
 ```js
 <--
@@ -171,7 +210,7 @@ console.log(People.prototype === Student.prototype.__prototype);
 ```
 
 **class 继承原型图**
-![原型图2](../images/prototype02.png)
+![原型图2](./images/prototype02.png)
 
 ```js
 // 判断属性或者方法是否属于实例，不属于原型链上 hasOwnProperty()
@@ -179,7 +218,7 @@ xialuo.hasOwnProperty('name'); // true
 xialuo.hasOwnProperty('sayHi'); //  false
 ```
 
-![原型图3](../images/prototype03.png)
+![原型图3](./images/prototype03.png)
 
 ### 回看 instanceof
 
@@ -261,3 +300,13 @@ class myJQuery extends jQuery {
 }
 
 ```
+
+### 判断 javaScript 数据类型的方式(四种方式)
+
+typeof
+
+instanceof
+
+constructor
+
+Object.prototype.toString.call()

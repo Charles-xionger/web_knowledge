@@ -62,3 +62,37 @@ const dfs = function(n) {
 
 dfs(2); // 2-0-1-3
 ```
+
+## 图的广度优先遍历算法口诀
+
+1. 新建一个队列，把根节点入队
+2. 把队头出队并访问
+3. 把队头的没访问过的相邻节点入队
+4. 重复第二，三步，直到队列为空
+
+<img src="./images/图的广度遍历.png"/>
+
+```js
+// bfs.js
+const graph = require('./graph');
+
+const visited = new Set();
+visited.add(2);
+const q = [2];
+while (q.length) {
+    const n = q.shift();
+    console.log(n);
+    graph[n].forEach(c => {
+        if (!visited.has(c)) {
+            q.push(c);
+            visited.add(c);
+        }
+    });
+}
+```
+
+## LeetCode 算法题
+
+#### [65. 有效数字](https://leetcode-cn.com/problems/valid-number/)
+
+<img src="./images/leetcode-65有效数字.png"/>

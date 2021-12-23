@@ -1,4 +1,6 @@
-# BOM brower object model
+# BOM
+
+## BOM (brower object model)
 
 题目：
 如何识别浏览器的类型

@@ -26,18 +26,21 @@ console.log(300);
 
 -   2. js: 同步和异步区别？为什么需要异步？
 
-        基于 JS 是单线程语言，异步不会阻塞代码执行，同步会阻塞代码执行
-        这是由于 js 是单线程语言决定的，单线程执行代码是自上而下一步一步执行，会存在阻塞代码执行的情况存在，异步为了解决代码阻塞的问题
+        基于 JS 是单线程语言，异步不会阻塞代码执行，同步会阻塞代码执行，例如： 遇到等待（网络请求，定时任务）不能卡住
+
+        这是由于 js 是单线程语言决定的。单线程执行代码是自上而下一步一步执行，会存在阻塞代码执行的情况存在。
+
+        异步是为了解决代码阻塞的问题，异步基于 callback 函数 形式
 
 ## 异步应用在哪些场景？
 
 1. 网络请求： AJAX 请求数据
-2. 定时任务： setTimeout 和 setInterval
+2. 定时任务： setTimeout
 
 ## Promise 解决回调地狱（callback hell)
 
 <center class="half">
-    <img src="../images/callback_hell.png" width="400"/>
+    <img src="./images/callback_hell.png" width="400"/>
 </center>
 
 ```js
@@ -77,8 +80,11 @@ getData(url)
 
 ## event-loop 事件循环/事件轮询
 
-异步是基于回调来实现的， event-loop 是 JS 异步回调机制的实现原理
+JS 是单线程运行的，异步是基于回调来实现的
 
+event-loop 是 JS 异步回调机制的实现原理
+
+回顾 JS 如何执行的，
 **简单示例**
 
 ```js
@@ -92,7 +98,7 @@ console.log('Bye');
 ```
 
 <center class="half">
-    <img src="../images/event-loop.png" width="800"/>
+    <img src="./images/event-loop.png" width="800"/>
 </center>
 
 **讲述 event loop 执行过程**
@@ -154,7 +160,7 @@ console.log('Bye');
 -   DOM 事件也是使用回调，基于 event loop 但是不是异步
 -   DOM 事件操作和异步本质上都是回调函数，但是触发机制不一样
 
-## promis 基本使用
+## promise 基本使用
 
 #### 手写 Promise 加载一张照片
 
@@ -406,7 +412,7 @@ console.log(400);
 
 -   JS 是单线程的，和 DOM 渲染共用一个线程
 -   JS 是执行的时候，得留一些时机供 DOM 渲染
-    ![eventLoop 和 DOM 渲染](../images/eventLoop-DOM.png)
+    ![eventLoop 和 DOM 渲染](./images/eventLoop-DOM.png)
 
     -   每次 Call Stack 清空 （即每次轮询结束），即同步任务执行完
     -   都是 DOM 重新渲染的机会，DOM 解构如果有改变则重新渲染
@@ -464,7 +470,7 @@ setTimeout(() => {
 #### 再深入思考一下：为何两者会有以上区别，一个在渲染前，一个在渲染后？
 
 <center class="half">
-    <img src="../images/async.png" width="400"/><img src="../images/async1.png" width="400"/>
+    <img src="./images/async.png" width="400"/><img src="./images/async1.png" width="400"/>
 </center>
 
 从 EventLoop 进行分析：
@@ -511,7 +517,7 @@ setTimeout(() => {
 
 5. 场景题 async/await 语法
     <center>
-      <img src="../images/场景题-async-await.png" />
+      <img src="./images/场景题-async-await.png" />
     </center>
 6. 场景题 Promise 和 setTimeout 顺序
 

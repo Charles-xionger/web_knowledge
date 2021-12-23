@@ -1,93 +1,213 @@
+
+
 module.exports = {
   title: '蒋新波的个人博客',  // 设置网站标题
-  description: '前端基础知识总结',
+  description: '学习记录',
   base: '/',
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
-      { text: 'js基础', link: '/web/' },
-      // { text: 'React', link: '/react/' },
-      { text: '前端课程', link: '/web-course/' },
-      { text: '数据结构和算法-JavaScript', link: '/js-algorithm/' }
+      { text: "首页", link: "/" },
+      {
+        text: 'vue',
+        items: [
+          {
+            text: 'vue基础',
+            link: '/vue/vue-base/'
+          }
+        ]
+      },
+      { text: 'React', link: '/react/' },
+      {
+        text: '基础知识点总结',
+        items: [
+          {
+            text: 'HTML和CSS',
+            link: '/web/html-css/'
+          },
+          {
+            text: 'JavaScript基础',
+            link: '/web/jsbase/'
+          },
+          {
+            text: 'JavaScript-WebAPI',
+            link: '/web/webapi/'
+          }
+        ]
+      },
+      {
+        text: '前端进阶',
+        items: [
+          {
+            text: 'PromiseA+',
+            link: '/web-course/promise/'
+          },
+          {
+            text: 'TypeScript',
+            link: '/web-course/TS/'
+          },
+          {
+            text: 'ES6',
+            link: '/web-course/es6/'
+          }
+        ]
+      },
+      {
+        text: '数据结构和算法-JavaScript',
+        items: [
+          // {
+          //     text: '栈（缺）',
+          //     link: '/js-algorithm/linked-list/'
+          // },
+          // {
+          //     text: '队列（缺）',
+          //     link: '/js-algorithm/linked-list/'
+          // },
+          {
+            text: '链表',
+            link: '/js-algorithm/linked-list/'
+          },
+          {
+            text: '集合',
+            link: '/js-algorithm/set/'
+          },
+          {
+            text: '字典',
+            link: '/js-algorithm/map/'
+          },
+          {
+            text: '树',
+            link: '/js-algorithm/tree/'
+          },
+          {
+            text: '图',
+            link: '/js-algorithm/graph/'
+          },
+          {
+            text: '搜索排序',
+            link: '/js-algorithm/sort-search/'
+          }
+        ]
+      }
     ],
     navbar: true,
     sidebar: {
-      collapsable: false,
-      '/web/': [
+      '/web/jsbase/': [
         {
-          title: '指南',
+          title: 'JS基础',
           collapsable: false,
           children: [
-            ''
+            'variable-types',
+            'prototype-chain',
+            'scope',
+            'async'
+          ]
+        },
+      ],
+      '/web/html-css/': [
+        {
+          title: 'html 和 css',
+          collapsable: true,
+          children: [
+            'html',
+            'css'
+          ]
+        },
+      ],
+      '/web/webapi/': [
+        {
+          title: 'WebAPI',
+          collapsable: true,
+          children: [
+            'DOM',
+            'BOM',
+            'event',
+            'ajax',
+            'storage',
+            'http'
+          ]
+        },
+      ],
+      '/web-course/promise/': [
+        {
+          title: 'PromiseA+规范',
+          collapsable: true,
+          children: [
+            'promiseA+'
+          ]
+        },
+      ],
+      '/web-course/TS/': [
+        {
+          title: 'TS 部分基础知识',
+          collapsable: false,
+          children: [
+            'typescript'
+          ]
+        },
+      ],
+      '/web-course/es6/': [
+        {
+          title: '面向对象编程',
+          collapsable: false,
+          children: [
+            'class',
+            'const',
+            'function_arrow',
+            'OOP'
           ]
         }, {
-          title: 'HTML和CSS',
-          collapsable: true,
+          title: '作用域-this-闭包',
+          collapsable: false,
           children: [
-            'html-css/html',
-            'html-css/css'
+            'scope'
           ]
         },
+      ],
+      '/web-course/TS/': [
         {
-          title: 'JS基础',
-          collapsable: true,
+          title: 'Reat基础',
+          collapsable: false,
           children: [
-            'jsbase/variable-types',
-            'jsbase/prototype-chain',
-            'jsbase/scope',
-            'jsbase/async'
-          ]
-        },
-        {
-          title: 'JS基础',
-          collapsable: true,
-          children: [
-            'jsbase/variable-types',
-            'jsbase/prototype-chain',
-            'jsbase/scope',
-            'jsbase/async'
-          ]
-        },
-        {
-          title: 'JS-Web-API',
-          collapsable: true,
-          children: [
-            'webapi/DOM',
-            'webapi/BOM',
-            'webapi/event',
-            'webapi/ajax',
-            'webapi/storage',
-            'webapi/http',
-            'webapi/event',
-            'de/chrome',
-            'de/git',
-            'de/de'
+            'react-base'
           ]
         }
       ],
-      '/web-course/': [
+      '/js-algorithm/tree/': [
         {
-          title: '内容简介',
-          collapsable: false,
+          title: '数据结构-树',
+          collapsable: true,
           children: [
-            'promise/promiseA+',
-            'module/module',
-            'node/node'
+            'tree'
           ]
-        },
+        }
       ],
-      '/js-algorithm/': [
+      '/js-algorithm/graph/': [
         {
-          title: '内容简介',
-          collapsable: false,
+          title: '数据结构-图',
+          collapsable: true,
           children: [
-            'linked-list/linked-list',
-            'set/set',
-            'map/map',
-            'tree/tree',
-            'graph/graph'
+            'graph'
           ]
-        },
+        }
+      ],
+      '/js-algorithm/map/': [
+        {
+          title: '数据结构-哈希表',
+          collapsable: true,
+          children: [
+            'map'
+          ]
+        }
+      ],
+      '/js-algorithm/sort-search/': [
+        {
+          title: '数据结构-搜索和查找',
+          collapsable: true,
+          children: [
+            'search',
+            'sort'
+          ]
+        }
       ]
     }
   }

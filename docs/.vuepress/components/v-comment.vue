@@ -52,3 +52,12 @@ export default {
   margin-right auto;
 }
 </style>
+
+/**
+ * ```
+<ClientOnly>
+  <v-comment></v-comment>
+</ClientOnly>
+
+```
+ */
