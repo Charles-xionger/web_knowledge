@@ -48,6 +48,10 @@ module.exports = {
           {
             text: 'ES6',
             link: '/web-course/es6/'
+          },
+          {
+            text: 'React',
+            link: '/web-course/react/'
           }
         ]
       },
@@ -139,7 +143,7 @@ module.exports = {
       '/web-course/TS/': [
         {
           title: 'TS 部分基础知识',
-          collapsable: false,
+          collapsable: true,
           children: [
             'typescript'
           ]
@@ -163,7 +167,7 @@ module.exports = {
           ]
         },
       ],
-      '/web-course/TS/': [
+      '/web-course/react/': [
         {
           title: 'Reat基础',
           collapsable: false,
