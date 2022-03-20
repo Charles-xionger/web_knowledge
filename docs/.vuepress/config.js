@@ -31,6 +31,10 @@ module.exports = {
           {
             text: 'JavaScript-WebAPI',
             link: '/web/webapi/'
+          },
+          {
+            text: '运行环境',
+            link: '/web/de/'
           }
         ]
       },
@@ -130,6 +134,17 @@ module.exports = {
             'http'
           ]
         },
+      ],
+      '/web/de/': [
+        {
+          title: '运行环境',
+          collapsable: true,
+          children: [
+            'chrome',
+            'de',
+            'git'
+          ]
+        }
       ],
       '/web-course/promise/': [
         {

@@ -23,11 +23,11 @@ class MPromise {
     }
   }
 
-  get status() {
+  get status () {
     return this._status;
   }
 
-  set status(newStatus) {
+  set status (newStatus) {
     this._status = newStatus;
     switch (newStatus) {
       case FULFILLED: {
@@ -47,21 +47,21 @@ class MPromise {
   }
 
 
-  resolve(value) {
+  resolve (value) {
     if (this.status === PENDING) {
       this.value = value;
       this.status = FULFILLED;
     }
   }
 
-  reject(reason) {
+  reject (reason) {
     if (this.status === PENDING) {
       this.reason = reason;
       this.status = REJECTED;
     }
   }
 
-  then(onFulfilled, onRejected) {
+  then (onFulfilled, onRejected) {
     // 6.3
     const realOnFulfilled = this.isFunction(onFulfilled) ? onFulfilled : (value) => {
       // 值得透传，接收什么返回什么
@@ -120,11 +120,12 @@ class MPromise {
     return promise2
   }
 
-  catch(onRejected) {
+  catch (onRejected) {
     return this.then(null, onRejected)
   }
 
-  resolvePromise(promise2, x, resolve, reject) {
+  resolvePromise (promise2, x, resolve, reject) {
+    // 7.1
     if (promise2 === x) {
       return reject(new TypeError('The promise and the return value are the same'));
     }
@@ -136,12 +137,14 @@ class MPromise {
         this.resolvePromise(promise2, y, resolve, reject)
       }, reject)
     } else if (typeof x === 'object' || this.isFunction(x)) {
+      // 边界条件
       if (x === null) {
         return resolve(x)
       }
       let then = null;
 
       try {
+        // 7.3 取x.then 赋值给 then
         then = x.then
       } catch (error) {
         return reject(error)
@@ -166,12 +169,14 @@ class MPromise {
               reject(r)
             })
         } catch (error) {
+          // 如果当前的函数已经执行了，直接return
           if (called) {
             return;
           }
           reject(error)
         }
       } else {
+        // 获取的then不是函数， 直接resolve(x)
         resolve(x)
       }
     } else {
@@ -179,12 +184,12 @@ class MPromise {
     }
   }
 
-  isFunction(value) {
+  isFunction (value) {
     return typeof value === 'function'
   }
 
   // 静态方法
-  static resolve(value) {
+  static resolve (value) {
     if (value instanceof MPromise) {
       return value
     }
@@ -194,13 +199,13 @@ class MPromise {
     })
   }
 
-  static reject(reason) {
+  static reject (reason) {
     return new MPromise((resolve, reject) => {
       reject(reason)
     })
   }
 
-  static race(promiseList) {
+  static race (promiseList) {
     return new MPromise((resolve, reject) => {
       const length = promiseList.length
 

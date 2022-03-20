@@ -81,13 +81,11 @@ xhr.send(JSON.stringify(postData));
 
 未经 server 端允许就实现跨域，说明浏览器有漏洞
 
-
 ### 常见的跨域解决方案
-- CORS、反向代理（Reverse Proxy）、 JSONP
+
+-   CORS、反向代理（Reverse Proxy）、 JSONP
 
 #### CORS（Cross-origin Resource Sharing）跨域资源共享
-
-
 
 #### 浏览器对跨域请求的拦截
 
@@ -120,6 +118,8 @@ xhr.send(JSON.stringify(postData));
 ### CORS（服务端支持）
 
 ### 题目
+
+**手写简单的 ajax 请求**
 
 ```js
 // 简单版的ajax
@@ -160,5 +160,3 @@ ajax(url)
     .then(res => console.log(res))
     .catch(err => console.log(err));
 ```
-
-

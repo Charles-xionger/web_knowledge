@@ -105,8 +105,8 @@ const preorder = root => {
         return;
     }
     const stack = [root];
-    const top = stack.pop();
     while (stack.length) {
+        const top = stack.pop();
         console.log(top.val);
         if (top.right) stack.push(top.right);
         if (top.left) stack.push(top.left);
@@ -224,7 +224,7 @@ return res;
 // 中序遍历
 while (stack.length || point) {
     while (point) {
-        stack(point);
+        stack.push(point);
         point = point.left;
     }
     const node = stack.pop();
@@ -237,7 +237,7 @@ return res;
 while (stack.length || point) {
     while (point) {
         res.push(point.val);
-        stack(point);
+        stack.push(point);
         point = point.right;
     }
     const node = stack.pop();

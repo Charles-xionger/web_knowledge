@@ -6,14 +6,6 @@
 
 ## 网页加载过程
 
-#### 题目
-
--   从输入 url 到渲染页面的整个过程
-
-（没有标准答案： 关注核心部分：前端）
-
--   window.onload 和 DOMContentLoaded 的区别
-
 #### 知识点
 
 -   加载资源的形式（ html 代码、 媒体文件 、JavaScript css ）
@@ -121,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 1.  对 DOM 查询进行缓存
 2.  频繁 DOM 操作，合并到一起插入 DOM 结构
-3.  节流 throttle 防抖 debounce (手写代码)
+3.  节流 throttle debounce (手写代码)
 
 #### 手写防抖 debounce
 
@@ -254,3 +246,11 @@ div1.addEventListener('drag', function(event))
 
 -   使用 POST 接口
 -   增加验证，例如密码，短信验证码，指纹
+
+#### 题目
+
+-   从输入 url 到渲染页面的整个过程
+
+（没有标准答案： 关注核心部分：前端）
+
+-   window.onload 和 DOMContentLoaded 的区别

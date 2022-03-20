@@ -48,3 +48,9 @@ loaction.hash; // 哈希值
 history.back(); // 后退
 history.forward(); // 前进
 ```
+
+### 获取 url 参数的方法
+
+```js
+// TODO
+```
