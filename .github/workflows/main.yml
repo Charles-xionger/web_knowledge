@@ -32,12 +32,12 @@ jobs:
       - name: copy dist file with scp
         uses: appleboy/scp-action@v0.0.1
         with:
-          host: ${{secret.REMOTE_HOST}}
-          username: ${{secret.REMOTE_USER}}
-          password: ${{secret.REMOTE_PASSWORD}}
+          host: ${{secrets.REMOTE_HOST}}
+          username: ${{secrets.REMOTE_USER}}
+          password: ${{secrets.REMOTE_PASSWORD}}
           port: 22
           source: "docs/.vuepress/dist"
-          target: ${{secret.REMOTE_TARGET}}
+          target: ${{secrets.REMOTE_TARGET}}
         
       
 
